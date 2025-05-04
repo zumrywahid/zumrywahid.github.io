@@ -12,7 +12,9 @@ comments: true
   <img src="/assets/images/zumry.jpg" alt="Zumry Profile Photo" width="200"/>
 </p>
 
-<p class="mb-5"></p>
+<p class="mb-5 text-center h3">
+Native Mobile , Flutter and Web3
+</p>
 
 <p>
 My name is Zumry, and I am a highly experienced software engineer with a strong focus on mobile and web development. My journey in mobile application development began in 2015, and since then, I have gained deep expertise in building high-performance apps for both iOS and Android platforms — natively as well as using cross-platform frameworks like Flutter. Over the years, I've successfully developed and delivered hundreds of applications from scratch to production, spanning industries ranging from fintech and healthcare to e-commerce and entertainment.
