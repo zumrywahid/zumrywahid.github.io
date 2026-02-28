@@ -1,13 +1,51 @@
-# Welcome to my tech blog!
+# Code with Zumry
 
+> A developer blog on AI engineering, developer tools, and building products with LLMs.
 
-<p align="center">
-  <img src="/assets/images/zumry.jpg" alt="Zumry Profile Photo" width="200"/>
-</p>
+**[zumrywahid.github.io](https://zumrywahid.github.io)**
 
-My name is Zumry, and I am a highly experienced software engineer with a strong focus on mobile and web development. My journey in mobile application development began in 2015, and since then, I have gained deep expertise in building high-performance apps for both iOS and Android platforms — natively as well as using cross-platform frameworks like Flutter. Over the years, I've successfully developed and delivered hundreds of applications from scratch to production, spanning industries ranging from fintech and healthcare to e-commerce and entertainment.
+---
 
-I have worked extensively in environments ranging from fast-paced startups to large-scale enterprise projects, always ensuring robust architecture, scalability, and seamless user experiences. In addition to my mobile expertise, I also have strong skills in React.js for web development, allowing me to build modern, responsive UIs and contribute across the full stack. Furthermore, I bring valuable experience in Web3 technologies, including blockchain integration, smart contracts, and decentralized applications (dApps), positioning me at the forefront of emerging tech trends. With a passion for innovation and clean code, I strive to deliver cutting-edge digital solutions that meet evolving business needs.
+## About
 
-I am now taking the next step by sharing all my knowledge and techniques with the community. As part of this initiative, I’ve just started writing this blog to document and share my experiences, ideas, and best practices. I hope to continue this journey and post more insights, tips, and technical guides regularly to help others grow and stay updated in the ever-evolving world of software development.
+I'm Zumry — a Senior AI Product Engineer writing about the intersection of AI and software engineering. This blog covers practical guides on AI agents, RAG pipelines, coding assistants, prompt engineering, and full-stack development with Go, Flutter, and Next.js.
 
+## Topics
+
+- **AI & LLMs** — RAG pipelines, embeddings, semantic search, local models with Ollama
+- **AI Coding Tools** — Claude Code, Cursor, GitHub Copilot, vibe coding workflows
+- **Developer Tools** — MCP servers, CLI productivity, IDE setups
+- **Full-Stack Development** — Go backends, Flutter mobile, Next.js web apps
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Generator | Jekyll |
+| Hosting | GitHub Pages |
+| Styling | Bootstrap 4 + custom SCSS |
+| Search | Lunr.js (client-side) |
+| Templating | Liquid + Kramdown |
+
+## Run Locally
+
+```bash
+# With Docker
+docker-compose up
+
+# Without Docker
+bundle install
+bundle exec jekyll serve
+```
+
+Site runs at `http://localhost:4000`.
+
+## Connect
+
+- [GitHub](https://github.com/zumrywahid)
+- [X (Twitter)](https://x.com/zumrywahid)
+- [LinkedIn](https://linkedin.com/in/zumrywahid)
+
+## License
+
+Content is copyright Zumry. Code is MIT licensed.
