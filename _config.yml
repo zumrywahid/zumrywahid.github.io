@@ -4,8 +4,8 @@ title: "Code with Zumry"
 description: "Hard-Earned Wisdom for Developers, Straight from Experience"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
-domain: ''
-url: ''
+domain: 'zumrywahid.github.io'
+url: 'https://zumrywahid.github.io'
 baseurl: ''
 google_analytics: 'UA-46278016-1'
 disqus: ''
@@ -18,10 +18,11 @@ authors:
   zum:
     name: Zumry
     display_name: zumry
-    gravatar: 
+    avatar: assets/images/avatar.png
+    gravatar:
     email: zumrywahid@gmail.com
-    web: 
-    twitter: 
+    web:
+    twitter:
     description: ""
 
 # Plugins

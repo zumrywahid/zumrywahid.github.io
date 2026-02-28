@@ -25,6 +25,20 @@ $dark-code-bg: #0d1117;
 // ─── Dark Theme ───
 [data-theme="dark"] {
 
+  // Design token overrides
+  --color-bg: #{$dark-bg};
+  --color-surface: #{$dark-surface};
+  --color-card: #{$dark-card};
+  --color-text: #{$dark-text-primary};
+  --color-text-secondary: #{$dark-text-secondary};
+  --color-link: #{$dark-link};
+  --color-link-hover: #{$dark-link-hover};
+  --color-border: #{$dark-border};
+  --color-accent: #{$dark-link};
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
   // Base
   background-color: $dark-bg;
   color: $dark-text-primary;
@@ -287,6 +301,56 @@ $dark-code-bg: #0d1117;
     background: $dark-surface;
     border-top-color: $dark-border !important;
     color: $dark-text-secondary;
+  }
+
+  .footer-redesign {
+    background: #0f172a;
+
+    .footer-social a {
+      background: rgba(255, 255, 255, 0.08);
+
+      &:hover {
+        background: $dark-link;
+      }
+    }
+
+    .footer-bottom {
+      border-top-color: rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  // ─── Explore Topics ───
+  .explore-topics {
+    background: $dark-surface;
+
+    .topic-pill {
+      background: $dark-card;
+      border-color: $dark-border;
+      color: $dark-text-primary;
+
+      &:hover {
+        background: $dark-link;
+        border-color: $dark-link;
+        color: #fff;
+      }
+    }
+  }
+
+  // ─── Navbar glassmorphism dark ───
+  .mediumnavigation {
+    background: rgba($dark-surface, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  // ─── Code blocks ───
+  code {
+    background-color: rgba(78, 205, 196, 0.1);
+    color: $dark-link;
+  }
+
+  pre code {
+    background-color: transparent;
   }
 
   // ─── Share Icons ───

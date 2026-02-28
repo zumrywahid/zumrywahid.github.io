@@ -1,0 +1,497 @@
+// =============================================
+// Blog Redesign — Visual Overrides
+// Modern, clean aesthetic for the Mediumish theme
+// =============================================
+
+// ─── 1. Design Tokens (CSS Custom Properties) ───
+
+:root {
+  // Colors
+  --color-bg: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-card: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-link: #2563eb;
+  --color-link-hover: #1d4ed8;
+  --color-border: #e5e7eb;
+  --color-accent: #2563eb;
+
+  // Shadows
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+
+  // Radii
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  // Transitions
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+
+// ─── 2. Base Overrides ───
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.site-content {
+  background: var(--color-bg);
+}
+
+a {
+  color: var(--color-link);
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration: none;
+  }
+}
+
+
+// ─── 3. Navbar ───
+
+.mediumnavigation {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+
+  .nav-link {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background: var(--color-accent);
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition-fast);
+    }
+
+    &:hover::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+
+  .navbar-brand {
+    padding: 0;
+  }
+}
+
+.brand-logo-text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--color-accent);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  &--sm {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    border-radius: 7px;
+    vertical-align: middle;
+  }
+}
+
+
+// ─── 4. Cards ───
+
+.card {
+  background: var(--color-card);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+
+    .maxthumb img,
+    .wrapthumbnail img,
+    .featured-box-img-cover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.listfeaturedtag {
+  background: var(--color-card);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+
+    .maxthumb img,
+    .wrapthumbnail img,
+    .featured-box-img-cover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.maxthumb,
+.wrapthumbnail {
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+
+  img {
+    transition: transform var(--transition-normal);
+  }
+}
+
+.card-footer {
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+}
+
+.listfeaturedtag h2.card-title a,
+.listrecent h2.card-title a,
+h2.card-title a {
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-link);
+  }
+}
+
+.listfeaturedtag h4.card-text,
+.listrecent h4.card-text,
+h4.card-text {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+// ─── 5. Section Titles ───
+
+.section-title {
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+  }
+
+  span {
+    border-bottom-color: var(--color-accent);
+  }
+}
+
+
+// ─── 6. Site Heading ───
+
+.mainheading {
+  text-align: center;
+  padding: 2rem 0;
+
+  .sitetitle {
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .lead {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+  }
+}
+
+
+// ─── 7. Categories Section (Explore Topics) ───
+
+.explore-topics {
+  padding: 3rem 0;
+  text-align: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  margin: 2rem 0;
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .topic-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .topic-pill {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition-fast);
+
+    &:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+    }
+  }
+}
+
+
+// ─── 8. Hide Old Jumbotron ───
+
+.jumbotron.fortags {
+  display: none;
+}
+
+
+// ─── 9. Footer ───
+
+.footer-redesign {
+  background: #111827;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3rem 0 1.5rem;
+
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .footer-brand {
+    h4 {
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .footer-social a {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: 0.5rem;
+    transition: var(--transition-fast);
+
+    &:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+  }
+
+  .footer-links {
+    h5 {
+      color: #fff;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      font-size: 0.875rem;
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+
+// ─── 10. Page Fade-in Animation ───
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+
+// ─── 11. Post Page Improvements ───
+
+.article-post {
+  font-family: 'Merriweather', Georgia, serif;
+  line-height: 1.8;
+  font-size: 1.05rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+
+// ─── 12. Pagination ───
+
+.bottompagination {
+  span.navigation a {
+    border-radius: var(--radius-sm);
+    padding: 0.4rem 0.8rem;
+    transition: background var(--transition-fast), color var(--transition-fast);
+
+    &:hover {
+      background: var(--color-surface);
+      color: var(--color-link);
+    }
+  }
+}
+
+
+// ─── 13. Author Thumb ───
+
+.author-thumb {
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+}
+
+
+// ─── 14. Code Blocks ───
+
+pre {
+  background: #1e293b;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border: none;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+}
+
+code {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--color-accent);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+}
+
+pre code {
+  background: transparent;
+  color: #e2e8f0;
+  padding: 0;
+}
+
+
+// ─── 15. Category Badge ───
+
+.card-category-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+
+// ─── 16. Reading Time ───
+
+.card-reading-time {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+
+// ─── 17. Mobile Responsive ───
+
+@media (max-width: 768px) {
+  .footer-redesign .row > div {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .explore-topics {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+  }
+
+  .mainheading {
+    padding: 1.5rem 0;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .listfeaturedtag {
+    margin-bottom: 1.5rem;
+  }
+}
