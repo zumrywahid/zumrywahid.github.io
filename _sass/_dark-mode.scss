@@ -1,0 +1,469 @@
+// Dark Mode Overrides
+// All styles scoped under [data-theme="dark"] on <html>
+
+// ─── Color Variables ───
+$dark-bg: #1a1a2e;
+$dark-card: #1e1e3a;
+$dark-surface: #16213e;
+$dark-border: rgba(255, 255, 255, 0.08);
+$dark-text-primary: rgba(255, 255, 255, 0.87);
+$dark-text-secondary: rgba(255, 255, 255, 0.6);
+$dark-link: #4ecdc4;
+$dark-link-hover: #45b7aa;
+$dark-code-bg: #0d1117;
+
+// ─── Smooth Transition (applied after initial load) ───
+[data-theme-transition] {
+  &,
+  & *,
+  & *::before,
+  & *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  }
+}
+
+// ─── Dark Theme ───
+[data-theme="dark"] {
+
+  // Base
+  background-color: $dark-bg;
+  color: $dark-text-primary;
+
+  body {
+    background-color: $dark-bg;
+    color: $dark-text-primary;
+  }
+
+  // Links
+  a {
+    color: $dark-link;
+
+    &:hover {
+      color: $dark-link-hover;
+    }
+  }
+
+  // ─── Navbar ───
+  .mediumnavigation {
+    background: rgba($dark-surface, 0.97) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: $dark-text-primary;
+
+    &:hover,
+    &:focus {
+      color: $dark-link;
+    }
+  }
+
+  .navbar-light .navbar-brand {
+    color: $dark-text-primary;
+  }
+
+  .navbar-light .navbar-toggler {
+    border-color: $dark-border;
+  }
+
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .mediumnavigation .form-control {
+    background-color: $dark-card;
+    border-color: $dark-border;
+    color: $dark-text-primary;
+
+    &::placeholder {
+      color: $dark-text-secondary;
+    }
+  }
+
+  .mediumnavigation .dropdown-menu {
+    background-color: $dark-card;
+    border-color: $dark-border;
+  }
+
+  // ─── Site Content ───
+  .site-content {
+    background-color: $dark-bg;
+  }
+
+  .mainheading h1.sitetitle {
+    color: $dark-text-primary;
+  }
+
+  .mainheading .lead {
+    color: $dark-text-secondary;
+  }
+
+  // ─── Cards ───
+  .card {
+    background-color: $dark-card;
+    border-color: $dark-border;
+  }
+
+  .listfeaturedtag {
+    border-color: $dark-border;
+  }
+
+  .listfeaturedtag h2.card-title,
+  .listrecent h2.card-title {
+    color: $dark-text-primary;
+
+    a {
+      color: $dark-text-primary;
+
+      &:hover {
+        color: $dark-link;
+      }
+    }
+  }
+
+  .listfeaturedtag h4.card-text,
+  .listrecent h4.card-text {
+    color: $dark-text-secondary;
+  }
+
+  .card-footer {
+    background-color: $dark-card;
+    border-top-color: $dark-border;
+  }
+
+  // ─── Section Title ───
+  .section-title h2 {
+    border-bottom-color: $dark-border;
+    color: $dark-text-primary;
+  }
+
+  .section-title span {
+    border-bottom-color: $dark-text-secondary;
+  }
+
+  // ─── Post Meta ───
+  .wrapfooter {
+    color: $dark-text-secondary;
+  }
+
+  span.post-date,
+  span.post-read {
+    color: $dark-text-secondary;
+  }
+
+  span.post-read-more a {
+    color: $dark-text-secondary;
+
+    &:hover {
+      color: $dark-text-primary;
+    }
+  }
+
+  span.post-name a {
+    color: $dark-text-primary;
+  }
+
+  .post-top-meta span {
+    color: $dark-text-secondary;
+  }
+
+  // ─── Article Post ───
+  .article-post {
+    color: $dark-text-primary;
+  }
+
+  .article-post h1,
+  .article-post h2,
+  .article-post h3,
+  .article-post h4,
+  .article-post h5,
+  .article-post h6 {
+    color: $dark-text-primary;
+  }
+
+  // ─── Blockquote ───
+  blockquote {
+    border-left-color: $dark-link;
+    color: $dark-text-secondary;
+  }
+
+  // ─── Code Blocks ───
+  pre {
+    background: $dark-code-bg;
+    border-color: rgba(255, 255, 255, 0.05);
+    color: #c9d1d9;
+  }
+
+  code {
+    color: #e06c75;
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  pre code {
+    background-color: transparent;
+  }
+
+  // ─── Syntax Highlighting (GitHub Dark) ───
+  .highlight {
+    background: $dark-code-bg;
+
+    .c, .cm, .c1, .cs { color: #8b949e; }           // Comments
+    .cp { color: #8b949e; }                           // Preprocessor
+    .err { color: #f85149; background-color: transparent; } // Error
+    .k, .kc, .kd, .kp, .kr { color: #ff7b72; }       // Keywords
+    .kt { color: #ff7b72; }                           // Keyword.Type
+    .o, .ow { color: #ff7b72; }                       // Operators
+    .m, .mf, .mh, .mi, .mo, .il { color: #79c0ff; }  // Numbers
+    .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1 { color: #a5d6ff; } // Strings
+    .sr { color: #7ee787; }                            // Regex
+    .ss { color: #a5d6ff; }                            // Symbol
+    .na { color: #79c0ff; }                            // Attribute
+    .nb { color: #ffa657; }                            // Builtin
+    .nc { color: #ffa657; font-weight: bold; }         // Class
+    .no { color: #79c0ff; }                            // Constant
+    .ni { color: #c9d1d9; }                            // Entity
+    .ne { color: #ffa657; }                            // Exception
+    .nf { color: #d2a8ff; }                            // Function
+    .nn { color: #ffa657; }                            // Namespace
+    .nt { color: #7ee787; }                            // Tag
+    .nv, .vc, .vg, .vi { color: #79c0ff; }            // Variables
+    .bp { color: #79c0ff; }                            // Builtin.Pseudo
+    .w { color: #6e7681; }                             // Whitespace
+    .gd { color: #ffa198; background-color: rgba(248,81,73,0.1); }
+    .gd .x { background-color: rgba(248,81,73,0.2); }
+    .gi { color: #7ee787; background-color: rgba(46,160,67,0.1); }
+    .gi .x { background-color: rgba(46,160,67,0.2); }
+    .ge { font-style: italic; }
+    .gr { color: #ffa198; }
+    .gh { color: #79c0ff; }
+    .go { color: #8b949e; }
+    .gp { color: #8b949e; }
+    .gs { font-weight: bold; }
+    .gu { color: #79c0ff; }
+    .gt { color: #ffa198; }
+  }
+
+  pre.lineno {
+    color: #484f58;
+  }
+
+  // ─── Pagination ───
+  .bottompagination span.navigation {
+    color: $dark-text-secondary;
+    border-top-color: $dark-border;
+  }
+
+  span.navigation {
+    color: $dark-text-secondary;
+  }
+
+  .pointerup i.fa {
+    color: $dark-border;
+  }
+
+  // ─── Tags ───
+  ul.tags li a {
+    background: rgba(255, 255, 255, 0.08);
+    color: $dark-text-secondary;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: $dark-text-primary;
+    }
+  }
+
+  // ─── Jumbotron ───
+  .jumbotron.fortags a {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  // ─── Footer ───
+  .footer {
+    background: $dark-surface;
+    border-top-color: $dark-border !important;
+    color: $dark-text-secondary;
+  }
+
+  // ─── Share Icons ───
+  .share,
+  .share a {
+    color: $dark-text-secondary;
+    fill: $dark-text-secondary;
+  }
+
+  .share ul li i.fa {
+    border-color: $dark-border;
+  }
+
+  // ─── Related Posts ───
+  .listrelated .card {
+    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+  }
+
+  .graybg {
+    background-color: $dark-surface;
+  }
+
+  // ─── Alert Bar ───
+  .alertbar {
+    background-color: $dark-card;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .alertbar input[type="email"] {
+    background-color: $dark-bg;
+    border-color: $dark-border;
+    color: $dark-text-primary;
+  }
+
+  // ─── TOC ───
+  .toc ul {
+    color: $dark-text-primary;
+  }
+
+  // ─── Author Page ───
+  .authorpage .author-description {
+    color: $dark-text-secondary;
+  }
+
+  .graybg.authorpage {
+    border-top-color: $dark-border;
+  }
+
+  // ─── Forms ───
+  .form-control {
+    background-color: $dark-card;
+    border-color: $dark-border;
+    color: $dark-text-primary;
+
+    &::placeholder {
+      color: $dark-text-secondary;
+    }
+
+    &:focus {
+      background-color: $dark-card;
+      border-color: $dark-link;
+      color: $dark-text-primary;
+    }
+  }
+
+  // ─── Misc Helpers ───
+  .link-dark {
+    color: $dark-text-primary;
+  }
+
+  .sep {
+    background: $dark-text-secondary;
+  }
+
+  // ─── Bootstrap Overrides ───
+  .bg-white {
+    background-color: $dark-card !important;
+  }
+
+  .text-dark {
+    color: $dark-text-primary !important;
+  }
+
+  .border {
+    border-color: $dark-border !important;
+  }
+
+  // ─── Search Results ───
+  #lunrsearchresults .lunrsearchresult {
+    color: $dark-text-primary;
+
+    .title {
+      color: $dark-link;
+    }
+
+    .body {
+      color: $dark-text-secondary;
+    }
+
+    .url {
+      color: $dark-text-secondary;
+    }
+  }
+
+  // ─── Spoiler ───
+  .spoiler {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  // ─── Lazy Images ───
+  .lazyimg {
+    background: $dark-card;
+  }
+
+  // ─── Disqus ───
+  #disqus_thread {
+    color-scheme: dark;
+  }
+
+  // ─── Buttons ───
+  .btn.follow {
+    border-color: $dark-link;
+    color: $dark-link;
+  }
+
+  // ─── Social Links ───
+  .sociallinks a {
+    background: $dark-text-secondary;
+  }
+}
+
+// ─── Toggle Button ───
+.darkmode-toggle {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1;
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .icon-sun {
+    display: none;
+  }
+
+  .icon-moon {
+    display: inline-block;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+[data-theme="dark"] .darkmode-toggle {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .icon-sun {
+    display: inline-block;
+  }
+
+  .icon-moon {
+    display: none;
+  }
+}

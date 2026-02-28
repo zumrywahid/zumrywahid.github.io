@@ -1,7 +1,7 @@
-jekyll:
-    image: jekyll/jekyll:latest
-    command: jekyll serve --force_polling
+services:
+  jekyll:
+    image: bretfisher/jekyll-serve
     ports:
-        - 4000:4000
+      - 4000:4000
     volumes:
-        - .:/srv/jekyll
+      - .:/site
