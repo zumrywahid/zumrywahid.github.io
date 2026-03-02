@@ -4,7 +4,7 @@ title: "Claude Code vs Cursor vs GitHub Copilot — An AI Engineer's Honest Take
 author: Zumry
 categories: [ ai coding, developer tools ]
 tags: [ claude code, cursor, github copilot, ai coding tools, comparison ]
-image: assets/images/ai_coding_tools.png
+image: assets/images/claude_cursor_copilot.png
 featured: true
 description: "An honest comparison of Claude Code, Cursor, and GitHub Copilot from an AI engineer who uses all three daily. Includes a feature comparison table and recommendations."
 ---
