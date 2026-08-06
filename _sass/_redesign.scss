@@ -449,6 +449,50 @@ pre code {
 }
 
 
+// ─── 14b. Content Tables ───
+// Scoped to .article-post so Rouge's line-number tables (.rouge-table,
+// emitted because _config.yml sets line_numbers: true) keep their own layout.
+//
+// NOTE: deliberately does NOT use the --color-* tokens. `_dark-mode.scss` is
+// imported before this file and its `[data-theme="dark"]` block has the same
+// specificity as the `:root` block above, so :root wins on source order and
+// the tokens stay light in dark mode. Dark values are set in _dark-mode.scss.
+
+.article-post {
+  table:not(.rouge-table) {
+    width: 100%;
+    margin: 1.75rem 0;
+    border-collapse: collapse;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.6;
+
+    th,
+    td {
+      padding: 0.7rem 1rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      font-weight: 600;
+      color: #1a1a1a;
+      background: #f8f9fa;
+      border-bottom: 2px solid #d8dde3;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafbfc;
+    }
+  }
+}
+
+
 // ─── 15. Category Badge ───
 
 .card-category-badge {
@@ -476,6 +520,21 @@ pre code {
   .footer-redesign .row > div {
     text-align: center;
     margin-bottom: 1.5rem;
+  }
+
+  // Wide content tables scroll inside themselves rather than
+  // forcing the whole page to scroll horizontally.
+  .article-post table:not(.rouge-table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.85rem;
+
+    th,
+    td {
+      padding: 0.55rem 0.75rem;
+    }
   }
 
   .explore-topics {

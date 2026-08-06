@@ -217,6 +217,31 @@ $dark-code-bg: #0d1117;
     background-color: transparent;
   }
 
+  // ─── Content Tables ───
+  // Pairs with section 14b in _redesign.scss. Values are literal rather than
+  // --color-* tokens: this file is imported first, so :root in _redesign.scss
+  // wins the equal-specificity tie and the tokens stay light here.
+  .article-post table:not(.rouge-table) {
+    th,
+    td {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    th {
+      color: $dark-text-primary;
+      background: rgba(255, 255, 255, 0.06);
+      border-bottom-color: rgba(255, 255, 255, 0.18);
+    }
+
+    td {
+      color: $dark-text-primary;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.03);
+    }
+  }
+
   // ─── Syntax Highlighting (GitHub Dark) ───
   .highlight {
     background: $dark-code-bg;
