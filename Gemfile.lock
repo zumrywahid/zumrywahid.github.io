@@ -14,31 +14,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
-    google-protobuf (4.33.5)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-aarch64-linux-gnu)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-aarch64-linux-musl)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-arm64-darwin)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-x86-linux-gnu)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-x86-linux-musl)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-x86_64-darwin)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-x86_64-linux-gnu)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.5-x86_64-linux-musl)
+    google-protobuf (4.33.6)
       bigdecimal
       rake (>= 13)
     http_parser.rb (0.8.0)
